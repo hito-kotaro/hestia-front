@@ -24,8 +24,8 @@ const useApi = () => {
     await sleep(1000);
 
     const { data } = await axios.get(`${url}/${params}`);
-    setRecipe(data.title);
-    // console.log(data);
+    setRecipe(data.title ?? "メニューがありません。。。");
+    console.log(data.title);
     setThxMsg("いつもありがとう！！");
   };
 
